@@ -1,0 +1,19 @@
+train_size : 60000
+test_size : 10000
+batch_size: 5
+min_lr: 0.001
+max_lr: 0.005
+lr_step_size: 2000
+epochs: 40
+load_model: False
+num_samples: 16
+latent_dim: 2
+test_freq: 500
+save_model_freq: 2500
+visualise_freq: 500
+log_freq: 50
+model_dir: './checkpoints/'
+logs_dir: 'logs/'
+results_dir: 'results/'
+tag: 'l1cartoon'
+dataset: 'cartoons'

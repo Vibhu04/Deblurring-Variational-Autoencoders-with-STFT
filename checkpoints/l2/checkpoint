@@ -1,0 +1,2 @@
+model_checkpoint_path: "mse"
+all_model_checkpoint_paths: "mse"

@@ -1,0 +1,13 @@
+latent_dim: 2
+amp_coef: 1
+arg_coef: 1
+ssim_coef: -500
+beta: 0.005
+stft_coef: 0.0015
+eps : 0.000001
+stft_f : 28
+stft_s : 4
+inp_dim: None
+inp_c: None
+dataset: None
+loss : 'ours'
