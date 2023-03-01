@@ -22,6 +22,7 @@ class BaseVAE(tf.keras.Model):
             self.stft_s = args.stft_s
             self.loss = args.loss
             self.inp_dim = args.inp_dim
+            self.use_hann = False
             self.mse = tf.keras.losses.MeanSquaredError(reduction=tf.keras.losses.Reduction.NONE)
             self.hann_2d = self.get_hann_window()
             self.freq_filter = self.get_freq_filter()
@@ -88,7 +89,10 @@ class BaseVAE(tf.keras.Model):
         for i in range(num_conv):
             for j in range(num_conv):
                 img_segment = image[:, i * s:i * s + f, j * s:j * s + f, :]
-                fft = tf.signal.fft2d(tf.cast(img_segment, tf.complex64))
+                if self.use_hann:
+                    fft = tf.signal.fft2d(tf.cast(img_segment * self.hann_2d, tf.complex64))
+                else:
+                    fft = tf.signal.fft2d(tf.cast(img_segment, tf.complex64))
                 results.append(fft[:, :half_f, :half_f])
         results = tf.stack(results)
         results = tf.transpose(results, [1, 0, 2, 3, 4])
