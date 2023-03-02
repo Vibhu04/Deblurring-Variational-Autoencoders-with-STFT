@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  Deblurring Variational Autoencoders with short-time Fourier transform 
+  Deblurring Variational Autoencoders with Short-Time Fourier transform 
   <br>
 </h1>
   <p align="center">
@@ -13,6 +13,8 @@
 >
 > **Abstract:** *Variational Autoencoders (VAEs) are powerful generative models, however their generated samples are known to suffer from a characteristic blurriness, as compared to the outputs of alternative generating techniques. Extensive research efforts have been made to tackle this problem, and several works have focused on modifying the reconstruction term of the evidence lower bound (ELBO). In particular, many have experimented with augmenting the reconstruction loss with losses in the frequency domain. Such loss functions usually employ the Fourier transform to explicitly penalise the lack of higher frequency components
 in the generated samples, which are responsible for sharp visual features. In this paper, we explore the aspects of previous such approaches which aren’t well understood, and we propose an augmentation to the reconstruction term in response to them. Our reasoning leads us to use the short-time Fourier transform and to emphasise on local phase coherence between the input and output samples. We illustrate the potential of our proposed loss on the MNIST dataset by providing both qualitative and quantitative results.*
+
+Access the full paper [here](https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT/blob/main/paper.pdf).
 
 ## Citation
 ```
