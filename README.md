@@ -6,7 +6,6 @@
   <p align="center">
     <a href="https://github.com/Vibhu04">Vibhu Dalal</a>
   </p>
-<h4 align="center">Official repository of the paper</h4>
 
 
 > **Deblurring Variational Autoencoders with short-time Fourier transform**<br>
@@ -20,7 +19,7 @@ in the generated samples, which are responsible for sharp visual features. In th
 @software{Vibhu_Dalal_Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform_2023,
   author = {Dalal, Vibhu},
   month = {3},
-  title = {{[Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform](https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT)}},
+  title = {Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform},
   url = {https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT},
   version = {1.0.0},
   year = {2023}
