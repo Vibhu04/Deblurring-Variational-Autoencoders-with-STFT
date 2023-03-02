@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  Deblurring Variational Autoencoders with Short-Time Fourier transform 
+  Deblurring Variational Autoencoders with Short-Time Fourier Transform 
   <br>
 </h1>
   <p align="center">
@@ -8,7 +8,7 @@
   </p>
 
 
-> **Deblurring Variational Autoencoders with short-time Fourier transform**<br>
+> **Deblurring Variational Autoencoders with Short-Time Fourier Transform**<br>
 > Vibhu Dalal <br>
 >
 > **Abstract:** *Variational Autoencoders (VAEs) are powerful generative models, however their generated samples are known to suffer from a characteristic blurriness, as compared to the outputs of alternative generating techniques. Extensive research efforts have been made to tackle this problem, and several works have focused on modifying the reconstruction term of the evidence lower bound (ELBO). In particular, many have experimented with augmenting the reconstruction loss with losses in the frequency domain. Such loss functions usually employ the Fourier transform to explicitly penalise the lack of higher frequency components
@@ -16,7 +16,55 @@ in the generated samples, which are responsible for sharp visual features. In th
 
 Access the full paper [here](https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT/blob/main/paper.pdf).
 
+## Usage
+###Install requirements
+After cloning the repository, install the requirements with:
+
+```bash
+$ pip install -r requirements.txt
+```
+###Generate samples
+The repository contains 5 checkpoints of a VAE model in `checkpoints/`, which correspond to the following reconstruction loss functions which were used during the training of the VAE: 
+- L1
+- L2
+- SSIM
+- DFT + SSIM
+- Ours
+
+Samples can be generated from the models by running `generate.py`. An example run would be:
+```
+$ python generate.py --loss=ssim, --num_samples=16 --name=gen_samples --out_dir=results
+```
+The following flags can be specified:
+```
+$ python generate.py --help
+usage: generate.py [-h] [--loss LOSS] [--num_samples NUM_SAMPLES] [--name NAME]
+               [--out_dir OUT_DIR]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --loss LOSS           Options: l1, l2, ssim, dft+ssim, ours
+  --num_samples NUM_SAMPLES
+                        Number of samples to generate
+  --name NAME           Name of the generated image
+  --out_dir OUT_DIR     Name of output directory
+```
+
+###Train the model
+To train the VAE model, please refer to the configuration files `config/train_config.yml` and `config/model_config.yml` to customise the training procedure. Once the configuration files are ready, start the training with:
+
+```
+$ python train.py 
+```
+
+Note: the configuration parameters can be either set from before in the configuration files or they can be set with the previous command, e.g.
+```
+$ python train.py --batch_size=40 min_lr=0.0001 max_lr=0.001 --epochs=30
+```
+
+
 ## Citation
+If you use or extend this work, please cite it as below:
 ```
 @software{Vibhu_Dalal_Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform_2023,
   author = {Dalal, Vibhu},
@@ -27,46 +75,3 @@ Access the full paper [here](https://github.com/Vibhu04/Deblurring-Variational-A
   year = {2023}
 }
 ```
-
-## To run the demo
-
-To run the demo, you will need to have a CUDA capable GPU, PyTorch >= v1.3.1 and cuda/cuDNN drivers installed.
-Install the required packages:
-
-    pip install -r requirements.txt
-  
-Download pre-trained models:
-
-    python training_artifacts/download_all.py
-
-Run the demo:
-
-    python interactive_demo.py
-
-You can specify **yaml** config to use. Configs are located here: https://github.com/podgorskiy/ALAE/tree/master/configs.
-By default, it uses one for FFHQ dataset.
-You can change the config using `-c` parameter. To run on `celeb-hq` in 256x256 resolution, run:
-
-    python interactive_demo.py -c celeba-hq256
-
-However, for configs other then FFHQ, you need to obtain new principal direction vectors for the attributes.
-
-## Repository organization
-
-#### Running scripts
-
-The code in the repository is organized in such a way that all scripts must be run from the root of the repository.
-If you use an IDE (e.g. PyCharm or Visual Studio Code), just set *Working Directory* to point to the root of the repository.
-
-If you want to run from the command line, then you also need to set **PYTHONPATH** variable to point to the root of the repository.
-
-For example, let's say we've cloned repository to *~/ALAE* directory, then do:
-
-    $ cd ~/ALAE
-    $ export PYTHONPATH=$PYTHONPATH:$(pwd)
-
-![pythonpath](https://podgorskiy.com/static/pythonpath.svg)
-
-Now you can run scripts as follows:
-
-    $ python style_mixing/stylemix.py
