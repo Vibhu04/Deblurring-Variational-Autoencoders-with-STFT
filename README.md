@@ -17,13 +17,13 @@ in the generated samples, which are responsible for sharp visual features. In th
 Access the full paper [here](https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT/blob/main/paper.pdf).
 
 ## Usage
-###Install requirements
+### Install requirements
 After cloning the repository, install the requirements with:
 
 ```bash
 $ pip install -r requirements.txt
 ```
-###Generate samples
+### Generate samples
 The repository contains 5 checkpoints of a VAE model in `checkpoints/`, which correspond to the following reconstruction loss functions which were used during the training of the VAE: 
 - L1
 - L2
@@ -50,7 +50,7 @@ optional arguments:
   --out_dir OUT_DIR     Name of output directory
 ```
 
-###Train the model
+### Train the model
 To train the VAE model, please refer to the configuration files `config/train_config.yml` and `config/model_config.yml` to customise the training procedure. Once the configuration files are ready, start the training with:
 
 ```
