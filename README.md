@@ -24,7 +24,7 @@ After cloning the repository, install the requirements with:
 $ pip install -r requirements.txt
 ```
 ### Generate samples
-The repository contains 5 checkpoints of a VAE model in `checkpoints/`, which correspond to the following reconstruction loss functions which were used during the training of the VAE: 
+The repository contains 5 checkpoints of a VAE model in `checkpoints/`, which correspond to the following reconstruction loss functions which were tested during the training of the VAE: 
 - L1
 - L2
 - SSIM
@@ -66,10 +66,10 @@ $ python train.py --batch_size=40 min_lr=0.0001 max_lr=0.001 --epochs=30
 ## Citation
 If you use or extend this work, please cite it as below:
 ```
-@software{Vibhu_Dalal_Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform_2023,
+@software{Vibhu_Dalal_Deblurring-Variational-Autoencoders-with-Short-Time-Fourier-transform_2023,
   author = {Dalal, Vibhu},
   month = {3},
-  title = {Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform},
+  title = {Deblurring-Variational-Autoencoders-with-Short-Time-Fourier-transform},
   url = {https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT},
   version = {1.0.0},
   year = {2023}
