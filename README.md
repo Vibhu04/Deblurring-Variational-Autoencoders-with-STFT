@@ -4,28 +4,28 @@
   <br>
 </h1>
   <p align="center">
-    <a href="https://github.com/Vibhu04">Vibhu Dalal</a> •
+    <a href="https://github.com/Vibhu04">Vibhu Dalal</a>
   </p>
 <h4 align="center">Official repository of the paper</h4>
 
 
-# Deblurring Variational Autoencoders with short-time Fourier transform
-
-> **Something**<br>
+> **Deblurring Variational Autoencoders with short-time Fourier transform**<br>
 > Vibhu Dalal <br>
 >
 > **Abstract:** *Variational Autoencoders (VAEs) are powerful generative models, however their generated samples are known to suffer from a characteristic blurriness, as compared to the outputs of alternative generating techniques. Extensive research efforts have been made to tackle this problem, and several works have focused on modifying the reconstruction term of the evidence lower bound (ELBO). In particular, many have experimented with augmenting the reconstruction loss with losses in the frequency domain. Such loss functions usually employ the Fourier transform to explicitly penalise the lack of higher frequency components
 in the generated samples, which are responsible for sharp visual features. In this paper, we explore the aspects of previous such approaches which aren’t well understood, and we propose an augmentation to the reconstruction term in response to them. Our reasoning leads us to use the short-time Fourier transform and to emphasise on local phase coherence between the input and output samples. We illustrate the potential of our proposed loss on the MNIST dataset by providing both qualitative and quantitative results.*
 
 ## Citation
-@software{Parayil_Shibu_Hierarchical-Transformer-for-Long-Text-Summarization_2023,
-  author = {Parayil Shibu, Jishnu},
-  month = {1},
-  title = {{Hierarchical-Transformer-for-Long-Text-Summarization}},
-  url = {https://github.com/Jishnu8/Hierarchical-Transformer-for-Long-Text-Summarization},
+```
+@software{Vibhu_Dalal_Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform_2023,
+  author = {Dalal, Vibhu},
+  month = {3},
+  title = {{[Deblurring-Variational-Autoencoders-with-short-time-Fourier-transform](https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT)}},
+  url = {https://github.com/Vibhu04/Deblurring-Variational-Autoencoders-with-STFT},
   version = {1.0.0},
   year = {2023}
 }
+```
 
 ## To run the demo
 
