@@ -51,7 +51,7 @@ optional arguments:
 ```
 
 ### Train the model
-To train the VAE model, please refer to the configuration files `config/train_config.yml` and `config/model_config.yml` to customise the training procedure. Once the configuration files are ready, start the training with:
+To train the VAE model, please refer to the configuration files `config/train_config.yml` and `config/model_config.yml` to customise the training procedure. Once the configuration parameters are set, start the training with:
 
 ```
 $ python train.py 
