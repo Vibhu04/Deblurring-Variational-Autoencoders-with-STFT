@@ -23,7 +23,6 @@ class BaseVAE(tf.keras.Model):
             self.loss = args.loss
             self.inp_dim = args.inp_dim
             self.use_hann = False
-            self.mse = tf.keras.losses.MeanSquaredError(reduction=tf.keras.losses.Reduction.NONE)
             self.hann_2d = self.get_hann_window()
             self.freq_filter = self.get_freq_filter()
 
