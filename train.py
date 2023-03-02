@@ -1,6 +1,7 @@
 from tensorflow_addons.optimizers import CyclicalLearningRate
 import argparse
 import yaml
+import tensorflow as tf
 
 from vae.vae1 import VAE1
 from vae.vae2 import VAE2
@@ -37,7 +38,7 @@ def main():
     optimizer = tf.keras.optimizers.Adam(learning_rate=cyclical_learning_rate)
 
     if test_dataset is not None:
-        random_sample = tf.random.normal(shape=(train_args.num_samples, model_args.latent_dim))
+        random_sample = tf.random.normal(shape=(train_args.num_samples, model.latent_dim))
         test_set = list(test_dataset.as_numpy_iterator())
         test_sample = test_set[0][:8]
 
@@ -88,7 +89,7 @@ def main():
 
             if iters % train_args.visualise_freq == 0:
                 if test_dataset is not None:
-                    generate_images(model, random_sample, train_args.results_dir)
+                    generate_images(model, random_sample, train_args.results_dir, 'generated')
                     test_images(model, test_sample, train_args.results_dir)
 
             if iters % train_args.save_model_freq == 0:

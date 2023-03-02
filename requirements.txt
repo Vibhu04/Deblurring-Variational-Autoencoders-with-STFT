@@ -1,0 +1,5 @@
+tensorflow
+matplotlib
+numpy
+tensorflow_addons
+yaml

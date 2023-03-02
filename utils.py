@@ -4,6 +4,7 @@ import random
 import tensorflow as tf
 import os
 import datetime
+import math
 
 
 
@@ -83,21 +84,24 @@ def get_datasets(train_args, model_args):
         train_dataset = dataset.map(lambda x: normalization_layer(x))
         test_dataset = None
 
-
     return train_dataset, test_dataset
 
 
-def generate_images(model, random_sample, results_dir):
+def generate_images(model, random_sample, results_dir, name):
+
+    num_samples = random_sample.shape[0]
+    dim = math.ceil(num_samples ** 0.5)
 
     images = model.sample(random_sample)
-    fig = plt.figure(figsize=(4,4))
 
     for i in range(images.shape[0]):
-        plt.subplot(4, 4, i+1)
+        plt.subplot(dim, dim, i+1)
         plt.imshow(images[i, :, :, 0], cmap='gray')
         plt.axis('off')
 
-    plt.savefig(results_dir + '/generated.png')
+    file_name = results_dir + '/' + name + '.png'
+    plt.savefig(file_name)
+    print("Generated samples saved at " + file_name)
 
 
 

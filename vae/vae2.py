@@ -4,12 +4,12 @@ from vae.vae_base import BaseVAE
 
 class VAE2(BaseVAE):
 
-    def __init__(self, args):
+    def __init__(self, args=None):
 
         super(VAE2, self).__init__()
 
         self.latent_dim = 200
-        self.inp_shape = (args.inp_dim, args.inp_dim, args.inp_c)
+        self.inp_shape = (256, 256, 3)
         self.encoder = self.encoder_(args)
         self.decoder = self.decoder_(args)
 
